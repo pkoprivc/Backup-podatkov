@@ -20,12 +20,7 @@
     android:layout_width="match_parent" 
     android:layout_height="wrap_content" 
     android:gravity="right" android:layout_weight="1">
-        <Button android:layout_width="0px" 
-        android:layout_height="wrap_content"
-			android:layout_weight="1" 
-			android:id="@+id/btnSearch" android:background="@drawable/search"></Button>
-        <Button android:layout_width="0px" 
-        android:layout_height="wrap_content"
-			android:layout_weight="1" android:id="@+id/btnConnect" android:background="@drawable/bluetooth"></Button>
+        <ImageButton android:layout_width="wrap_content" android:background="@null"  android:layout_height="wrap_content" android:layout_weight="1" android:src="@drawable/search" android:id="@+id/btnSearch" android:onClick="onClickSearch"></ImageButton>
+        <ImageButton android:layout_width="wrap_content" android:background="@null"  android:layout_height="wrap_content" android:layout_weight="1" android:src="@drawable/connect" android:id="@+id/btnConnect" android:onClick="onClickConnect"></ImageButton>
     </LinearLayout>
 </LinearLayout>

@@ -1,0 +1,4 @@
+Aplikacija nam bo omogoèala hitri prenos podatkov iz aparata na 
+drugi aparat in hkrati tudi na raèunalnik. S tem bom zmanjšal uporabniku
+delovni èas, kajti z parimi kliki bo lahko prijatelju poslal sklikco
+ali si jo sinhroniziral na svoj raèunalnik.

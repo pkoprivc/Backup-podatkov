@@ -6,31 +6,36 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class Connect extends Activity {
     private static final int REQUEST_ENABLE_BT = 0;
 	/** Called when the activity is first created. */    
-    Button connect;
+    ImageButton search,connect;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        connect = (Button) findViewById(R.id.btnSearch);
+        
     }
     
-    public void onClick(View arg0)
+	public void onClickSearch(View arg0) {
+		BluetoothAdapter mBluetoothAdapter = BluetoothAdapter
+				.getDefaultAdapter();
+		if (mBluetoothAdapter == null) {
+			// Device does not support Bluetooth
+		} 
+		else if (!mBluetoothAdapter.isEnabled()) {
+			Intent enableBtIntent = new Intent(
+					BluetoothAdapter.ACTION_REQUEST_ENABLE);
+			startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+		}
+    }
+    
+    public void onClickConnect(View arg0)
     {
-    	if(arg0.getId()==R.id.btnSearch)
-    	{
-    		BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-    		if (mBluetoothAdapter == null) {
-    		    // Device does not support Bluetooth
-    		}
-    		if (!mBluetoothAdapter.isEnabled()) {
-    		    Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-    		    startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-    		}
-    	}
+    	Intent i = new Intent(this.getApplicationContext(), choiceOfData.class);
+    	startActivity(i);
     }
 }
